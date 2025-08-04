@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart</title>
+  <link rel="stylesheet" href="./cart.css" />
+</head>
+<body>
+  
+
+  <header class="header">
+    <div class="logo"><img src="./images/logo-colored.png" alt="img"></div>
+    <div class="search-section">
+      <input type="text" id="searchInput" placeholder="Search products..." onkeyup="handleSearch()" />
+      <select id="categoryDropdown">
+        <option value="all">All Categories</option>
+        <option value="Mobile phones">Mobile phones</option>
+        <option value="Clothing">Clothing</option>
+        <option value="shoes">Shoes</option>
+        <option value="books">Books</option>
+      </select>
+      <button onclick="handleSearch()" class="searchBtn">Search</button>
+    </div>
+    <div class="header-icons">
+      <button onclick="openProfile()" class="headerIcon1"><img src="./images/profile.png" alt="profile"><br>profile</button>
+      <button onclick="openMessages()" class="headerIcon1"><img src="./images/messages.png" alt="messages"><br>Messages</button>
+      <button onclick="openOrders()" class="headerIcon1"><img src="./images/orders.png" alt="orders"><br>Order</button>
+     <button onclick="cartPage()" class="headerIcon1 cart-button">
+  <img src="./images/myCart.png" alt="cart"><br>
+  My Cart
+  <span id="cartCount" class="cart-count">0</span>
+</button>
+
+
+    </div>
+  </header>
+
+  <div class="heading">
+    <h3>My Cart (3)</h3>
+  </div>
+
+  <div class="main-cart-wrapper">
+    <div class="cart-left">
+      <!-- Multiple cart-main sections go here (example repeated) -->
+      <div class="cart-main">
+        <div class="cart-item">
+          <img src="images/grey-shi.png" alt="Product" />
+          <div class="cart-1">
+            <p>T-shirts with multiple colors, for men and lady</p>
+            <p>$78.99</p>
+            <p>Size: medium, Color: blue, Material: Plastic<br>Seller: Artel Market</p>
+            <button class="remove">Remove</button>
+            <span>Save for later</span>
+          </div>
+        </div>
+        <div class="item-price">
+          <select class="qty">
+            <option>Qty: 1</option>
+            <option>Qty: 2</option>
+            <option>Qty: 3</option>
+            <option>Qty: 4</option>
+          </select>
+          <p>$78.99</p>
+        </div>
+      </div>
+<div class="cart-main">
+  <div class="cart-item">
+    <img src="images/grey-shi.png" alt="Product" />
+    <div class="cart-1">
+      <p>T-shirts with multiple colors, for men and lady</p>
+      <p>$78.99</p>
+      <p>Size: medium, Color: blue, Material: Plastic<br>Seller: Artel Market</p>
+      <button class="remove">Remove</button>
+      <span>Save for later</span>
+    </div>
+  </div>
+  <div class="item-price">
+    <select class="qty">
+      <option>Qty: 1</option>
+      <option>Qty: 2</option>
+      <option>Qty: 3</option>
+      <option>Qty: 4</option>
+    </select>
+    <p>$78.99</p>
+  </div>
+</div>
+<div class="cart-main">
+  <div class="cart-item">
+    <img src="images/grey-shi.png" alt="Product" />
+    <div class="cart-1">
+      <p>T-shirts with multiple colors, for men and lady</p>
+      <p>$78.99</p>
+      <p>Size: medium, Color: blue, Material: Plastic<br>Seller: Artel Market</p>
+      <button class="remove">Remove</button>
+      <span>Save for later</span>
+    </div>
+  </div>
+  <div class="item-price">
+    <select class="qty">
+      <option>Qty: 1</option>
+      <option>Qty: 2</option>
+      <option>Qty: 3</option>
+      <option>Qty: 4</option>
+    </select>
+    <p>$78.99</p>
+  </div>
+</div>
+<div class="cart-main">
+  <div class="cart-item">
+    <img src="images/grey-shi.png" alt="Product" />
+    <div class="cart-1">
+      <p>T-shirts with multiple colors, for men and lady</p>
+      <p>$78.99</p>
+      <p>Size: medium, Color: blue, Material: Plastic<br>Seller: Artel Market</p>
+      <button class="remove">Remove</button>
+      <span>Save for later</span>
+    </div>
+  </div>
+  <div class="item-price">
+    <select class="qty">
+      <option>Qty: 1</option>
+      <option>Qty: 2</option>
+      <option>Qty: 3</option>
+      <option>Qty: 4</option>
+    </select>
+    <p>$78.99</p>
+  </div>
+</div>
+      <!-- Repeat above .cart-main as needed -->
+
+      <div class="cart-buttons">
+        <button class="back"><img src="./images/back.png" style="margin-top: 3px;"> Back to shop</button>
+        <button class="remove-all">Remove all</button>
+      </div>
+    </div>
+
+    <div class="cart-summary">
+      <div class="coupon-box">
+        <label for="coupon">Have a coupon?</label>
+        <input type="text" id="coupon" placeholder="Add coupon" />
+        <button class="apply-btn">Apply</button>
+      </div>
+      <div class="totals">
+        <p>Subtotal: <span id="subtotal">$1403.97</span></p>
+        <p>Discount: <span class="green">- $60.00</span></p>
+        <p>Tax: <span class="red">+ $14.00</span></p>
+        <p><strong>Total:</strong> <strong id="total">$1357.97</strong></p>
+      </div>
+      <button class="checkout">Checkout</button>
+      <div class="payment-icons">
+        <img src="images/visa.png" alt="Visa" />
+        <img src="images/mastercard.png" alt="MasterCard" />
+        <img src="images/paypal.png" alt="PayPal" />
+      </div>
+    </div>
+  </div>
+
+  <div class="benefits">
+  <div class="benefit">
+    <div class="icon-circle">
+      <img src="./images/lock (1).png" alt="Secure Payment" />
+    </div>
+    <div>
+      <p class="benefit-title">Secure payment</p>
+      <p class="benefit-subtext">Have you ever finally just</p>
+    </div>
+  </div>
+  <div class="benefit">
+    <div class="icon-circle">
+      <img src="./images/lock (2).png" alt="Customer Support" />
+    </div>
+    <div>
+      <p class="benefit-title">Customer support</p>
+      <p class="benefit-subtext">Have you ever finally just</p>
+    </div>
+  </div>
+  <div class="benefit">
+    <div class="icon-circle">
+      <img src="./images/lock (3).png" alt="Free Delivery" />
+    </div>
+    <div>
+      <p class="benefit-title">Free delivery</p>
+      <p class="benefit-subtext">Have you ever finally just</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Related Products Section (Placed Below Cart) -->
+  <h3 class="related-title">Save for Later</h3>
+  <div class="related-products">
+    <div class="related-card">
+      <img src="./images/wallet.png" />
+      <p>Xiaomi Redmi 8 Original</p>
+      <p>$32.00-$40.00</p>
+      <button class="icon-button">
+  <img src="./images/myCart.png" alt="Cart Icon">
+  <span>Move to cart</span>
+</button>
+    </div>
+    <div class="related-card">
+      <img src="./images/smartwatch.png" />
+      <p>Xiaomi Redmi 8 Original</p>
+      <p>$32.00-$40.00</p>
+      <button class="icon-button">
+  <img src="./images/myCart.png" alt="Cart Icon">
+  <span>Move to cart</span>
+</button>
+    </div>
+    <div class="related-card">
+      <img src="./images/headphone2.png" />
+      <p>Xiaomi Redmi 8 Original</p>
+      <p>$32.00-$40.00</p>
+      <button class="icon-button">
+  <img src="./images/myCart.png" alt="Cart Icon">
+  <span>Move to cart</span>
+</button>
+    </div>
+    <div class="related-card">
+      <img src="./images/shorts.png" />
+      <p>Xiaomi Redmi 8 Original</p>
+      <p>$32.00-$40.00</p>
+      <button class="icon-button">
+  <img src="./images/myCart.png" alt="Cart Icon">
+  <span>Move to cart</span>
+</button>
+    </div>
+    
+    <div class="related-card">
+      <img src="./images/rag.png" />
+      <p>Xiaomi Redmi 8 Original</p>
+      <p>$32.00-$40.00</p>
+      <button class="icon-button">
+  <img src="./images/myCart.png" alt="Cart Icon">
+  <span>Move to cart</span>
+</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

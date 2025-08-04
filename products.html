@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./products.css">
+  <title>Product Listing</title>
+  <!-- <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f8fa;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .sidebar h3 {
+      margin-bottom: 10px;
+    }
+
+    .sidebar section {
+      margin-bottom: 20px;
+    }
+
+    .sidebar label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .main-content {
+      flex: 1;
+    }
+
+    .breadcrumb {
+      margin-bottom: 10px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .top-filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .top-filters input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .product {
+      display: flex;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product img {
+      width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .product-info {
+      flex: 1;
+      padding: 0 20px;
+    }
+
+    .product h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-left: 10px;
+    }
+
+    .rating {
+      font-size: 14px;
+      color: #f39c12;
+    }
+
+    .product-description {
+      font-size: 14px;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .details-link {
+      color: #2c7cf1;
+      text-decoration: none;
+    }
+
+    .wishlist {
+      font-size: 22px;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .wishlist.active {
+      background-color: red;
+    }
+
+    .price-range {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-range input {
+      margin-bottom: 5px;
+    }
+
+    section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+}
+
+section h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+section input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #007bff; /* blue highlight */
+  transform: scale(1.2); /* slightly bigger radio */
+}
+
+section p {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  /* vertical-align: middle; */
+  font-size: 15px;
+  color: #333;
+}
+
+.rating-filter {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  width: 200px;
+  font-family: Arial, sans-serif;
+}
+
+.rating-filter h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.rating-filter label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.stars {
+  color: orange;
+  font-size: 16px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-top: 20%;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+select {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page, button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page.active {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+    }
+  </style> -->
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><img src="./images/logo-colored.png" alt="img"></div>
+
+    <div class="search-section">
+      
+      <input type="text" id="searchInput" placeholder="Search products..." onkeyup="handleSearch()" />
+      <select id="categoryDropdown">
+        <option value="all">All Categories</option>
+        <option value="Mobile phones"  >Mobile phones</option>
+        <option value="Clothing">Clothing</option>
+        <option value="shoes">Shoes</option>
+        <option value="books">Books</option>
+      </select>
+
+      <button onclick="handleSearch()" class="searchBtn">Search</button>
+    </div>
+ <!-- <div class="hamburger" onclick="toggleMenu()">☰</div> -->
+    <div class="header-icons">
+      <button onclick="openProfile()" class="headerIcon1"><img src="./images/profile.png" alt="profile" ><br>profile</button>
+      <button onclick="openMessages()"class="headerIcon1" ><img src="./images/messages.png" alt="profile" ><br>Messages</button>
+      <button onclick="openOrders()" class="headerIcon1"><img src="./images/orders.png" alt="profile" ><br>Order</button>
+      <button onclick="openCart()" class="headerIcon1"><img src="./images/myCart.png" alt="profile" ><br>My Cart</button>
+    </div>
+  </header>
+
+<!-- next section -->
+
+  <div class="topbar">
+    <div class="left-menu">
+      <span class="icon">☰</span>
+      <a href="#">All category</a>
+      <a href="#">Hot offers</a>
+      <a href="#">Gift boxes</a>
+      <a href="#">Projects</a>
+      <a href="#">Menu item</a>
+      <div class="dropdown">
+        <a href="#">Help ⌄</a>
+        <div class="dropdown-content">
+          <a href="#">Customer Service</a>
+          <a href="#">FAQs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-menu">
+      <div class="dropdown">
+        <a href="#">English, USD ⌄</a>
+        <div class="dropdown-content">
+          <a href="#">English, USD</a>
+          <a href="#">Deutsch, EUR</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Ship to <img src="https://flagcdn.com/w40/de.png" alt="Germany" class="flag"></a>
+        <div class="dropdown-content">
+          <a href="#"><img src="https://flagcdn.com/w40/pk.png" alt="PK" class="flag"> Pakistan</a>
+          <a href="#"><img src="https://flagcdn.com/w40/us.png" alt="US" class="flag"> USA</a>
+          <a href="#"><img src="https://flagcdn.com/w40/in.png" alt="IN" class="flag"> India</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcrumb">
+    Home > Clothing > Men's wear > Summer clothing
+  </div>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <section>
+        <h3>Category</h3>
+        <label><input type="checkbox" /> Mobile accessory</label>
+        <label><input type="checkbox" /> Electronics</label>
+        <label><input type="checkbox" /> Smartphones</label>
+        <label><input type="checkbox" /> Modern tech</label>
+      </section>
+
+      <section>
+        <h3>Brands</h3>
+       <label><input type="checkbox" class="brand-filter" value="Samsung" /> Samsung</label>
+  <label><input type="checkbox" class="brand-filter" value="Apple" /> Apple</label>
+  <label><input type="checkbox" class="brand-filter" value="Huawei" /> Huawei</label>
+  <label><input type="checkbox" class="brand-filter" value="Poco" /> Poco</label>
+  <label><input type="checkbox" class="brand-filter" value="Lenovo" /> Lenovo</label>
+      </section>
+
+      <section>
+        <h3>Features</h3>
+        <label><input type="checkbox" /> Metallic</label>
+        <label><input type="checkbox" /> Plastic cover</label>
+        <label><input type="checkbox" /> 8GB RAM</label>
+        <label><input type="checkbox" /> Super power</label>
+        <label><input type="checkbox" /> Large Memory</label>
+      </section>
+
+      <section class="price-range">
+        <h3>Price range</h3>
+        <input type="range" id="priceMin" min="0" max="99999" value="0" />
+        <input type="range" id="priceMax" min="0" max="99999" value="99999" />
+        <span>Min: <span id="minVal">0</span></span>
+        <span>Max: <span id="maxVal">99999</span></span>
+      </section>
+      <section>
+      <h3>Condition</h3>
+     <input type="radio" name="radio" id="radio-btn" ><p>Any</p><br>
+      <input type="radio" name="radio" id="radio-btn" ><p>Refurbished</p><br>
+       <input type="radio" name="radio" id="radio-btn" ><p>Brand new</p><br>
+        <input type="radio" name="radio" id="radio-btn" ><p>Old items</p>
+    </section>
+    <div class="rating-filter">
+  <h4>Ratings</h4>
+  <label><input type="checkbox" class="rating-checkbox" value="5" /> <span class="stars">★★★★★</span></label><br />
+  <label><input type="checkbox" class="rating-checkbox" value="4" /> <span class="stars">★★★★☆</span></label><br />
+  <label><input type="checkbox" class="rating-checkbox" value="3" /> <span class="stars">★★★☆☆</span></label><br />
+  <label><input type="checkbox" class="rating-checkbox" value="2" /> <span class="stars">★★☆☆☆</span></label><br />
+</div>
+
+    </aside>
+
+    
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-filters">
+        <span><strong>12,911</strong> items in Mobile accessory</span>
+        <div>
+          <label><input type="checkbox" /> Verified only</label>
+          <select>
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+          <button onclick="switchToGrid()" style="margin: 20px 0;"><img src="./images/grid.png" alt="grid"></button>
+          <span>  <button onclick="switchToListView()"><img src="./images/list.png" alt="list"></button></span>
+
+        </div>
+      </div>
+
+      <div class="products" id="productContainer">
+        <!-- product  1 -->
+    <div class="product" data-brand="Samsung" data-rating="5"> 
+      <img src="./images/red-mobile.png" alt="Product">
+      <div class="product-info">
+        <h4 class="product-name">Canon Cmera EOS 2000, Black 10x zoom</h4>
+        <div class="price">$998.00 <span class="old-price">$1128.00</span></div>
+        <div class="rating">★★★★★7.5 <span style="color: #8B96A5;">• 154 orders •</span> <span style="color: green;">Free Shipping</span></div>
+        <p class="product-description">High quality DSLR camera for photography enthusiasts.</p>
+        <a class="details-link" href="#">View details</a>
+      </div>
+      <div class="wishlist" onclick="toggleWishlist(this)">♡</div>
+    </div>
+<!-- porduct 2 -->
+    <div class="product"   data-rating="4">
+      <img src="./images/grey-shi.png" alt="Product">
+      <div class="product-info">
+        <h4 class="product-name">Men Shirt Sleeve Polo Contrast</h4>
+        <div class="price">$998.00 <span class="old-price">$1128.00</span></div>
+        <div class="rating">★★★★☆ 7.5 <span style="color: #8B96A5;">• 154 orders •</span> <span style="color: green;">Free Shipping</span></div>
+        <p class="product-description">High quality DSLR camera for photography enthusiasts.</p>
+        <a class="details-link" href="./product-preview.html">Shop Now</a>
+      </div>
+      <div class="wishlist" onclick="toggleWishlist(this)">♡</div>
+    </div>
+    <!-- product 3 -->
+        <div class="product" data-brand="Apple">
+      <img src="./images/mobile.png" alt="Product">
+      <div class="product-info">
+        <h4 class="product-name">GoPro HERO6 4K Action Camera - Black</h4>
+        <div class="price">$998.00 <span class="old-price">$1128.00</span></div>
+        <div class="rating">★★★★☆ 7.5 <span style="color: #8B96A5;">• 154 orders •</span> <span style="color: green;">Free Shipping</span></div>
+        <p class="product-description">High quality DSLR camera for photography enthusiasts.</p>
+        <a class="details-link" href="./product-preview.html">Shop now</a>
+      </div>
+      <div class="wishlist" onclick="toggleWishlist(this)">♡</div>
+    </div>
+    <!-- product 4 -->
+        <div class="product">
+      <img src="./images/laptop.png" alt="Product">
+      <div class="product-info">
+        <h4 class="product-name">GoPro HERO6 4K Action Camera - Black</h4>
+        <div class="price">$998.00 <span class="old-price">$1128.00</span></div>
+       <div class="rating">★★★★☆ 7.5 <span style="color: #8B96A5;">• 154 orders •</span> <span style="color: green;">Free Shipping</span></div>
+        <p class="product-description">High quality DSLR camera for photography enthusiasts.</p>
+        <a class="details-link" href="#">View details</a>
+      </div>
+      <div class="wishlist" onclick="toggleWishlist(this)">♡</div>
+    </div>
+    <!-- product 5 -->
+        <div class="product" data-rating="3">
+      <img src="./images/smartwatch.png" alt="Product">
+      <div class="product-info">
+        <h4 class="product-name">GoPro HERO6 4K Action Camera - Black</h4>
+        <div class="price">$998.00 <span class="old-price">$1128.00</span></div>
+        <div class="rating">★★★☆☆ 7.5 <span style="color: #8B96A5;">• 154 orders •</span> <span style="color: green;">Free Shipping</span></div>
+        <p class="product-description">High quality DSLR camera for photography enthusiasts.</p>
+        <a class="details-link" href="#">View details</a>
+      </div>
+      <div class="wishlist" onclick="toggleWishlist(this)">♡</div>
+    </div>
+    <!-- product 6 -->
+    <div class="product">
+      <img src="./images/headphone2.png" alt="Product">
+      <div class="product-info">
+        <h4 class="product-name">GoPro HERO6 4K Action Camera - Black</h4>
+        <div class="price">$750.00 <span class="old-price">$899.00</span></div>
+       <div class="rating">★★★★☆ 7.5 <span style="color: #8B96A5;">• 154 orders •</span> <span style="color: green;">Free Shipping</span></div>
+        <p class="product-description">Compact mirrorless camera with high performance lens.</p>
+        <a class="details-link" href="#">View details</a>
+      </div>
+      <div class="wishlist" onclick="toggleWishlist(this)">♡</div>
+    </div>
+  </div>
+
+<div class="pagination-container">
+  <label for="itemsPerPage">Show</label>
+  <select id="itemsPerPage">
+    <option value="5">5</option>
+    <option value="10" selected>10</option>
+    <option value="20">20</option>
+  </select>
+
+  <div class="pagination">
+    <button id="prevBtn">‹</button>
+    <span class="page" id="page1">1</span>
+    <span class="page" id="page2">2</span>
+    <span class="page" id="page3">3</span>
+    <button id="nextBtn">›</button>
+  </div>
+  </div>
+</main>
+
+<br>
+</div>
+
+<div class="newsletter-section">
+  <div class="newsletter-header">
+    <h4>Subscribe on our newsletter</h4>
+    <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+  </div>
+
+  <form class="subscribe-form">
+    <div class="input-wrapper">
+      <img src="./images/email.png" alt="Email Icon" class="email-icon" />
+      <input type="email" placeholder="Email" required />
+    </div>
+    <button type="submit" class="subscribe-button">Subscribe</button>
+  </form>
+</div>
+
+<!-- next section -->
+ <footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="./images/logo-colored.png" alt="Brand Logo" class="footer-logo" />
+      <p>Best informative about the company goes here but now lorem ipsum is fine</p>
+      <div class="social-icons">
+        <img src="./images/fb.png" alt="Facebook" />
+        <img src="./images/twitter.png" alt="Twitter" />
+        <img src="./images/linkedin.png" alt="LinkedIn" />
+        <img src="./images/insta.png" alt="Instagram" />
+        <img src="./images/yt.png" alt="youtube" />
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Find store</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partnership</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Find store</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Money Refund</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For users</h4>
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Register</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">My Orders</a></li>
+        </ul>
+      </div>
+      <div class="get-app">
+        <h4>Get app</h4>
+        <button><img src="./images/appstore.png" alt="App Store" /></button><br><br>
+        <button><img src="./images/googleplay.png" alt="Google Play" /></button><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2023 Ecommerce</p>
+    <div class="lang-select">
+      <img src="https://flagcdn.com/w20/us.png" alt="Flag" />
+      <span>English</span>
+      <span>▲</span>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+  <script src="./app.js"></script>
+  </body> 
+  </html>
+
+
+
+
+
+
+
+
+
+
+
+

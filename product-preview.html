@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Product Detail Page</title>
+  <link rel="stylesheet" href="./preview.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><img src="./images/logo-colored.png" alt="img"></div>
+
+    <div class="search-section">
+      
+      <input type="text" id="searchInput" placeholder="Search products..." onkeyup="handleSearch()" />
+      <select id="categoryDropdown">
+        <option value="all">All Categories</option>
+        <option value="Mobile phones"  >Mobile phones</option>
+        <option value="Clothing">Clothing</option>
+        <option value="shoes">Shoes</option>
+        <option value="books">Books</option>
+      </select>
+
+      <button onclick="handleSearch()" class="searchBtn">Search</button>
+    </div>
+ <!-- <div class="hamburger" onclick="toggleMenu()">☰</div> -->
+    <div class="header-icons">
+      <button onclick="openProfile()" class="headerIcon1"><img src="./images/profile.png" alt="profile" ><br>profile</button>
+      <button onclick="openMessages()"class="headerIcon1" ><img src="./images/messages.png" alt="profile" ><br>Messages</button>
+      <button onclick="openOrders()" class="headerIcon1"><img src="./images/orders.png" alt="profile" ><br>Order</button>
+      <button onclick="openCart()" class="headerIcon1"><img src="./images/myCart.png" alt="profile" ><br>My Cart</button>
+    </div>
+  </header>
+
+<!-- next section -->
+
+  <div class="topbar">
+    <div class="left-menu">
+      <span class="icon">☰</span>
+      <a href="#">All category</a>
+      <a href="#">Hot offers</a>
+      <a href="#">Gift boxes</a>
+      <a href="#">Projects</a>
+      <a href="#">Menu item</a>
+      <div class="dropdown">
+        <a href="#">Help ⌄</a>
+        <div class="dropdown-content">
+          <a href="#">Customer Service</a>
+          <a href="#">FAQs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-menu">
+      <div class="dropdown">
+        <a href="#">English, USD ⌄</a>
+        <div class="dropdown-content">
+          <a href="#">English, USD</a>
+          <a href="#">Deutsch, EUR</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#">Ship to <img src="https://flagcdn.com/w40/de.png" alt="Germany" class="flag"></a>
+        <div class="dropdown-content">
+          <a href="#"><img src="https://flagcdn.com/w40/pk.png" alt="PK" class="flag"> Pakistan</a>
+          <a href="#"><img src="https://flagcdn.com/w40/us.png" alt="US" class="flag"> USA</a>
+          <a href="#"><img src="https://flagcdn.com/w40/in.png" alt="IN" class="flag"> India</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcrumb">
+    Home > Clothing > Men's wear > Summer clothing
+  </div>
+
+
+
+
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <img src="./images/grey-shi.png" class="main-image" alt="Main Product" />
+      <div class="thumbnails">
+        <img src="./images/1.png" alt="thumb" />
+        <img src="./images/2.png" alt="thumb" />
+        <img src="./images/3.png" alt="thumb" />
+        <img src="./images/4.png" alt="thumb" />
+        <img src="./images/1.png" alt="thumb" />
+      </div>
+    </div>
+
+    <!-- Middle Section -->
+    <div class="middle-section">
+      <p class="stock">In stock</p>
+      <p class="title">Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</p>
+      <p class="rating">⭐⭐⭐⭐ 9.3 · 32 reviews · 📦 154 sold</p>
+
+      <div class="price-table">
+        <div class="price-box">
+          <p>$98.00</p>
+          <span>50–100 pcs</span>
+        </div>
+        <div class="price-box">
+          <p>$90.00</p>
+          <span>100–700 pcs</span>
+        </div>
+        <div class="price-box">
+          <p>$78.00</p>
+          <span>700+ pcs</span>
+        </div>
+      </div>
+
+      <div class="details">Price: &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>Negotiable</strong></div>
+      <div class="details">Type:  &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Classic shoes</div>
+      <div class="details">Material:  &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Plastic material</div>
+      <div class="details">Design:  &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Modern nice</div>
+      <div class="details">Customization:  &nbsp; &nbsp; &nbsp &nbsp;Customized logo and packages</div>
+      <div class="details">Protection:  &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp;  Refund Policy</div>
+      <div class="details">Warranty:  &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2 years full warranty</div>
+    </div>
+
+    <!-- Right Section -->
+   <div class="right-section">
+  <div class="supplier-row">
+    <img src="./images/R.png" alt="R">
+    <h4>Supplier<br>Guanjpi Trading LLC</h4>
+  </div>
+
+  <p><img src="https://flagcdn.com/w40/de.png" alt="Germany" class="flag"> 🇩🇪 Germany, Berlin</p>
+  <p><img src="./images/check.png" alt="Verified" class="flag" style="width: 20px;" height="80px"> Verified Seller</p>
+  <p><img src="./images/internet (1).png" alt="Shipping" class="flag"> Worldwide Shipping</p>
+
+  <button class="seller-btn" onclick="cart()" >Send Inquiry</button>
+  <br>
+  <button class="seller-btn" style="background: #ddd; color: black;">Seller's Profile</button>
+
+  <!-- Move this inside at the end -->
+<div class="btn-save">
+  <button><i class="fas fa-heart" style="color:red; "></i>Save for later</button>
+</div>
+
+</div>
+ 
+
+<div class="description-wrapper">
+  <!-- TABS SECTION -->
+  <div class="tabs-section">
+    <div class="tabs">
+      <div class="tab active" data-tab="description">Description</div>
+      <div class="tab" data-tab="reviews">Reviews</div>
+      <div class="tab" data-tab="shipping">Shipping</div>
+      <div class="tab" data-tab="about">About Seller</div>
+    </div>
+
+    <div class="tab-content" id="description">
+      <p>This is the Description content.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      </p>
+
+      <div class="tab-content1">
+        <div class="row"><div class="label">Model:</div><div class="value">#8786867</div></div>
+        <div class="row"><div class="label">Style:</div><div class="value">Classic style</div></div>
+        <div class="row"><div class="label">Certificate:</div><div class="value">ISO-898921212</div></div>
+        <div class="row"><div class="label">Size:</div><div class="value">34mm x 450mm x 19mm</div></div>
+        <div class="row"><div class="label">Memory:</div><div class="value">36GB RAM</div></div>
+      </div>
+
+      <div class="tab-content2">
+        <div class="feature-row"><img src="./images/select.png" alt="select"><p>Some great feature name here</p></div>
+        <div class="feature-row"><img src="./images/select.png" alt="select"><p>Lorem ipsum dolor sit amet, consectetur</p></div>
+        <div class="feature-row"><img src="./images/select.png" alt="select"><p>Duis aute irure dolor in reprehenderit</p></div>
+        <div class="feature-row"><img src="./images/select.png" alt="select"><p>Some great feature name here</p></div>
+      </div>
+    </div>
+
+    <div class="tab-content hidden" id="reviews"><p>No reviews yet.</p></div>
+    <div class="tab-content hidden" id="shipping"><p>Ships worldwide. Delivery in 5-10 business days.</p></div>
+    <div class="tab-content hidden" id="about"><p>Supplier: Comphy Trading LLC. Based in USA.</p></div>
+  </div>
+
+  <!-- ✅ RECOMMENDATION BOX MOVED INSIDE -->
+  <div class="recommendation-box">
+    <h4>You may like</h4>
+
+    <div class="product-suggestion">
+      <img src="./images/coat.png" alt="Blazer" />
+      <div class="info">
+        <p>Men Blazers Sets Elegant Formal</p>
+        <span>$7.00 – $99.50</span>
+      </div>
+    </div>
+
+    <div class="product-suggestion">
+      <img src="./images/shirt.png" alt="Shirt" />
+      <div class="info">
+        <p>Men Shirt Sleeve Polo Contrast</p>
+        <span>$7.00 – $99.50</span>
+      </div>
+    </div>
+
+    <div class="product-suggestion">
+      <img src="./images/browncoat.png" alt="Watch" />
+      <div class="info">
+        <p>Apple Watch Series Space Gray</p>
+        <span>$7.00 – $99.50</span>
+      </div>
+    </div>
+
+    <div class="product-suggestion">
+      <img src="./images/blueShirt.png" alt="Jacket" />
+      <div class="info">
+        <p>Basketball Crew Socks Long Stuff</p>
+        <span>$7.00 – $99.50</span>
+      </div>
+    </div>
+
+    <div class="product-suggestion">
+      <img src="./images/laetherbag.png" alt="Backpack" />
+      <div class="info">
+        <p>New Summer Men's castrol T-Shirts</p>
+        <span>$7.00 – $99.50</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<h3 class="related-title">Related Products</h3>
+    <div class="related-products">
+      <div class="related-card">
+        <img src="./images/wallet.png" />
+        <p>Xiaomi Redmi 8 Original </p>
+        <p>$32.00-$40.00</p>
+      </div>
+      <div class="related-card">
+        <img src="./images/smartwatch.png" />
+        <p>Xiaomi Redmi 8 Original</p>
+        <p>$32.00-$40.00</p>
+      </div>
+      <div class="related-card">
+        <img src="./images/headphone2.png" />
+        <p>Xiaomi Redmi 8 Original</p>
+        <p>$32.00-$40.00</p>
+      </div>
+      <div class="related-card">
+        <img src="./images/shorts.png" />
+        <p>Xiaomi Redmi 8 Original</p>
+        <p>$32.00-$40.00</p>
+      </div>
+  <div class="related-card">
+        <img src="./images/shorts.png" />
+        <p>Xiaomi Redmi 8 Original</p>
+        <p>$32.00-$40.00</p>
+      </div>
+  <div class="related-card">
+        <img src="./images/kettle.png" />
+        <p>Xiaomi Redmi 8 Original</p>
+        <p>$32.00-$40.00</p>
+      </div>
+        <div class="related-card">
+        <img src="./images/rag.png" />
+        <p>Xiaomi Redmi 8 Original</p>
+        <p>$32.00-$40.00</p>
+      </div>
+    </div>
+
+
+
+
+<div class="banner">
+  <div class="banner-text">
+    <h3>Super discount on more than 100 USD</h3>
+    <p class="bannerPara">Have you ever finally just write dummy info</p>
+  </div>
+  <div class="button-wrapper">
+    <button onclick="discProducts()">Shop Now</button>
+  </div>
+</div>
+
+
+
+ 
+<!-- next section
+ <footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="./images/logo-colored.png" alt="Brand Logo" class="footer-logo" />
+      <p>Best informative about the company goes here but now lorem ipsum is fine</p>
+      <div class="social-icons">
+        <img src="./images/fb.png" alt="Facebook" />
+        <img src="./images/twitter.png" alt="Twitter" />
+        <img src="./images/linkedin.png" alt="LinkedIn" />
+        <img src="./images/insta.png" alt="Instagram" />
+        <img src="./images/yt.png" alt="youtube" />
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Find store</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partnership</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Find store</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Money Refund</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For users</h4>
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Register</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">My Orders</a></li>
+        </ul>
+      </div>
+      <div class="get-app">
+        <h4>Get app</h4>
+        <button><img src="./images/appstore.png" alt="App Store" /></button><br><br>
+        <button><img src="./images/googleplay.png" alt="Google Play" /></button><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2023 Ecommerce</p>
+    <div class="lang-select">
+      <img src="https://flagcdn.com/w20/us.png" alt="Flag" />
+      <span>English</span>
+      <span>▲</span>
+    </div>
+  </div>
+</footer> -->
+  <script src="./app.js"></script>
+</body>
+</html>
