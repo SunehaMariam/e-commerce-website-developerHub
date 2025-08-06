@@ -14,7 +14,7 @@ function openMessages() {
   alert("Open Messages Page");
 }
 function cartPage() {
-  window.location.href = "./cart.html";
+  window.location.href = "./products.html.html";
 }
 
 function cart() {
