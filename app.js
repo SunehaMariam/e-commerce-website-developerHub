@@ -14,7 +14,7 @@ function openMessages() {
   alert("Open Messages Page");
 }
 
-function cartPage() {
+function cart() {
   window.location.href = "./cart.html";
 }
 
@@ -169,10 +169,7 @@ function switchToGrid() {
   }
 
 //    shop now
-function discProducts() {
-  
-  window.location.href = "./products.html";
-}
+
 
 
 
