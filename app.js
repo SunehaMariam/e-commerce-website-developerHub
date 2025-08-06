@@ -21,10 +21,6 @@ function cart() {
   window.location.href = "./cart.html";
 }
 
-function openOrders() {
-  alert("Open Orders Page");
-  window.location.href = "./products.html";
-}
 
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
