@@ -13,6 +13,9 @@ function openProfile() {
 function openMessages() {
   alert("Open Messages Page");
 }
+function cartPage() {
+  window.location.href = "./cart.html";
+}
 
 function cart() {
   window.location.href = "./cart.html";
